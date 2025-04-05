@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Casina - Jericoacoara</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fdfcf9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 0.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .hero {
+      position: relative;
+      background: url('hero-image.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+    }
+    .btn {
+      background: #d9a56d;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .apartments-preview img {
+      width: 90%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      border-top: 1px solid #ccc;
+      display: flex;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .btn-booking, .btn-airbnb {
+      display: inline-block;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 0.5rem;
+      font-weight: bold;
+    }
+    .btn-booking {
+      background-color: #003580;
+    }
+    .btn-airbnb {
+      background-color: #FF5A5F;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+    .contact-info {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .contact-info a {
+      color: #25D366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hidden { display: none; }
+  </style>
+  <script>
+    function switchLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.classList.add('hidden');
+        if (el.dataset.lang === lang) el.classList.remove('hidden');
+      });
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="lang-switch">
+    <span onclick="switchLang('pt')">PT</span> | <span onclick="switchLang('en')">EN</span>
+  </div>
+  <header>
+    <h1>La Casina</h1>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2 data-lang="pt">Bem-vindo à La Casina — Sua casa em Jericoacoara</h2>
+      <h2 data-lang="en" class="hidden">Welcome to La Casina — Your home in Jericoacoara</h2>
+      <a class="btn" href="https://www.booking.com/Share-uLeu8kI" target="_blank" data-lang="pt">Reservar agora</a>
+      <a class="btn hidden" href="https://www.booking.com/Share-uLeu8kI" target="_blank" data-lang="en">Book now</a>
+    </div>
+  </section>
+
+  <section class="section apartments-preview">
+    <h3 data-lang="pt">Nossos apartamentos</h3>
+    <h3 data-lang="en" class="hidden">Our apartments</h3>
+    <img src="apto1.jpg" alt="Apartamento 1">
+    <img src="apto2.jpg" alt="Apartamento 2">
+  </section>
+
+  <section class="section">
+    <h3 data-lang="pt">Reservas</h3>
+    <h3 data-lang="en" class="hidden">Reservations</h3>
+    <p data-lang="pt">Você pode reservar conosco nas principais plataformas:</p>
+    <p data-lang="en" class="hidden">You can book with us on major platforms:</p>
+    <a class="btn-booking" href="https://www.booking.com/Share-uLeu8kI" target="_blank">Booking</a>
+    <a class="btn-airbnb" href="https://www.airbnb.it/rooms/49752004?viralityEntryPoint=1&s=76" target="_blank">Airbnb</a>
+  </section>
+
+  <section class="section">
+    <h3 data-lang="pt">Contato</h3>
+    <h3 data-lang="en" class="hidden">Contact</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.328011220738!2d-40.51045!3d-2.7986834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7e98756a464f517%3A0xfb521fc8e7146d51!2sLa%20Casina%2C%20Jijoca%20de%20Jericoacoara%20-%20CE%2C%2062598-000!5e0!3m2!1spt-BR!2sbr!4v1712333400000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="contact-info">
+      <span data-lang="pt">
+        Endereço: La Casina, Jijoca de Jericoacoara - CE, 62598-000<br>
+        <a href="https://wa.me/558899490903?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20hospedagem%20na%20La%20Casina." target="_blank">Enviar mensagem no WhatsApp</a><br>
+        <a href="https://www.google.com.br/maps/place/La+Casina,+Jijoca+de+Jericoacoara+-+CE,+62598-000/@-2.7986834,-40.51045,20z" target="_blank">Ver no Google Maps</a>
+      </span>
+      <span data-lang="en" class="hidden">
+        Address: La Casina, Jijoca de Jericoacoara - CE, 62598-000<br>
+        <a href="https://wa.me/558899490903?text=Hello!%20I'm%20interested%20in%20booking%20a%20stay%20at%20La%20Casina." target="_blank">Send a message on WhatsApp</a><br>
+        <a href="https://www.google.com.br/maps/place/La+Casina,+Jijoca+de+Jericoacoara+-+CE,+62598-000/@-2.7986834,-40.51045,20z" target="_blank">View on Google Maps</a>
+      </span>
+    </div>
+  </section>
+
+  <a class="whatsapp-button" href="https://wa.me/558899490903?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20a%20hospedagem%20na%20La%20Casina." target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <nav>
+    <a href="#" data-lang="pt">Início</a>
+    <a href="#" data-lang="en" class="hidden">Home</a>
+    <a href="#" data-lang="pt">Apartamentos</a>
+    <a href="#" data-lang="en" class="hidden">Apartments</a>
+    <a href="#" data-lang="pt">Reservar</a>
+    <a href="#" data-lang="en" class="hidden">Book</a>
+    <a href="#" data-lang="pt">Contato</a>
+    <a href="#" data-lang="en" class="hidden">Contact</a>
+  </nav>
+</body>
+</html>
